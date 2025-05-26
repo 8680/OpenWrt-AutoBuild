@@ -33,8 +33,8 @@ else
     git clone -b dev --depth=1 https://github.com/vernesong/OpenClash.git
     mkdir -p "$FILES_DIR/usr/bin"
     wget https://raw.githubusercontent.com/8680/OpenWrt-AutoBuild/master/diy/data/neofetch/neofetch -O "$FILES_DIR/usr/bin/neofetch" || echo "警告：neofetch 下载失败"
+    chmod 775 "$FILES_DIR/usr/bin/neofetch"
 
-    
     echo "### 3. 更新和安装 feeds ###"
 FEEDS_CONF="$OPENWRT_DIR/feeds.conf.default"
 cat > "$FEEDS_CONF" << EOF
